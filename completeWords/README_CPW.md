@@ -24,7 +24,16 @@ Ao concluir este desafio, você terá adquirido conhecimentos valiosos sobre est
 
 Portanto, prepare-se para explorar os conceitos de árvores AVL e processamento de texto enquanto enfrenta este desafio empolgante de autocompletar palavras.
 
-[Link para main.py](./main.py)  
-[Link para text_processing.py](./text_processing.py)  
-[Link para AVL.py](./AVL.py)  
-[Link para AVL_BST_Performace.py](./AVL_BST_Performace_Test.py)  
+**Solução:**
+
+Neste projeto, foi implementado um sistema de autocompletar palavras usando uma Árvore AVL. Aqui estão os principais arquivos relacionados ao projeto:
+
+1. [**main.py**](./main.py): Este é o arquivo principal que contém a lógica central do sistema de autocompletar palavras. Você pode explorar e entender como a aplicação funciona a partir deste arquivo.
+
+2. [**text_processing.py**](./text_processing.py): Este arquivo contém funções e métodos relacionados ao processamento de texto. Ele desempenha um papel importante na extração de palavras únicas do corpus.
+
+3. [**AVL.py**](./AVL.py): Aqui, você encontrará a implementação da Árvore AVL, que é a estrutura de dados fundamental para armazenar e recuperar palavras de forma eficiente.
+
+4. [**AVL_BST_Performance_Test.py**](./AVL_BST_Performance_Test.py): Este arquivo contém testes de desempenho que comparam a eficiência da Árvore AVL com a Árvore Binária de Busca padrão (BST). É útil para entender como a Árvore AVL melhora a velocidade de pesquisa.
+
+Sinta-se à vontade para explorar esses links para obter uma visão mais aprofundada do projeto e do código-fonte. Se tiver alguma dúvida ou sugestão, não hesite em entrar em contato conosco. Estamos animados para compartilhar este projeto com você!
