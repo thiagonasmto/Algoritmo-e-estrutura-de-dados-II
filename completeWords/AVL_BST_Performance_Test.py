@@ -1,8 +1,9 @@
-import random
-import time
-from AVL import AVLTree
-from BST import BST
-import matplotlib.pyplot as plt
+# Importar as bibliotecas necessárias
+import random  # Importa a biblioteca random para gerar palavras aleatórias
+import time    # Importa a biblioteca time para medir o tempo de execução
+from AVL import AVLTree  # Importa a implementação da árvore AVL
+from BST import BST      # Importa a implementação da árvore BST
+import matplotlib.pyplot as plt  # Importa a biblioteca para criar gráficos
 
 # Função para gerar uma lista de palavras aleatórias
 def generate_random_words(n):
@@ -14,33 +15,33 @@ def generate_random_words(n):
 
 # Função para medir o tempo de inserção em uma árvore
 def measure_insertion_time(tree, words):
-    start_time = time.time()
+    start_time = time.time()  # Marca o tempo de início da inserção
     for word in words:
-        tree.add(word)
-    end_time = time.time()
-    return end_time - start_time
+        tree.add(word)  # Insere uma palavra na árvore
+    end_time = time.time()  # Marca o tempo de término da inserção
+    return end_time - start_time  # Calcula o tempo de inserção
 
 # Função para medir a altura da árvore
 def measure_tree_height(tree):
-    return tree.get_height()
+    return tree.get_height()  # Retorna a altura da árvore
 
 # Função para medir o tempo de busca de palavras com prefixo
 def measure_search_time(tree, prefix):
-    start_time = time.time()
-    result = tree.search_words_with_prefix(prefix)
-    end_time = time.time()
-    return end_time - start_time, len(result)
+    start_time = time.time()  # Marca o tempo de início da busca
+    result = tree.search_words_with_prefix(prefix)  # Realiza a busca de palavras com um prefixo
+    end_time = time.time()  # Marca o tempo de término da busca
+    return end_time - start_time, len(result)  # Retorna o tempo de busca e o número de palavras encontradas
 
 # Função para plotar os resultados
 def plot_results(avl_insertion_time, bst_insertion_time, avl_tree_height, bst_tree_height,
                  avl_search_time, avl_search_count, bst_search_time, bst_search_count):
-    labels = ['AVL', 'BST']
-    insertion_times = [avl_insertion_time, bst_insertion_time]
-    tree_heights = [avl_tree_height, bst_tree_height]
-    search_times = [avl_search_time, bst_search_time]
-    search_counts = [avl_search_count, bst_search_count]
+    labels = ['AVL', 'BST']  # Rótulos para as árvores
+    insertion_times = [avl_insertion_time, bst_insertion_time]  # Tempos de inserção
+    tree_heights = [avl_tree_height, bst_tree_height]  # Alturas das árvores
+    search_times = [avl_search_time, bst_search_time]  # Tempos de busca
+    search_counts = [avl_search_count, bst_search_count]  # Número de palavras encontradas
 
-    # Plotando os resultados
+    # Cria um gráfico com quatro subplots
     fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(12, 8))
 
     # Gráfico de Tempo de Inserção
@@ -104,7 +105,7 @@ if __name__ == "__main__":
     print("Altura da Árvore AVL:", avl_tree_height)
     print("Altura da Árvore BST:", bst_tree_height)
     print("Tempo de busca AVL (prefixo '{}'): {} segundos, {} palavras encontradas".format(search_prefix, avl_search_time, avl_search_count))
-    print("Tempo de busca BST (prefixe '{}'): {} segundos, {} palavras encontradas".format(search_prefix, bst_search_time, bst_search_count))
+    print("Tempo de busca BST (prefixo '{}'): {} segundos, {} palavras encontradas".format(search_prefix, bst_search_time, bst_search_count))
 
     # Plotar os resultados
     plot_results(avl_insertion_time, bst_insertion_time, avl_tree_height, bst_tree_height,

@@ -21,7 +21,7 @@ for palavra in palavras:
 # Realize a impressão da Árvore AVL em ordem
 avl_tree.print_in_order()
 
-# Realize a busca de palavras com prefixo "app"
+# Realize a busca de palavras com prefixo "s"
 prefixo = "s"
 palavras_com_prefixo = avl_tree.search_words_with_prefix(prefixo)
 
