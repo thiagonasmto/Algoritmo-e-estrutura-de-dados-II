@@ -25,3 +25,6 @@ Ao concluir este desafio, você terá adquirido conhecimentos valiosos sobre est
 Portanto, prepare-se para explorar os conceitos de árvores AVL e processamento de texto enquanto enfrenta este desafio empolgante de autocompletar palavras.
 
 [Link para main.py](./main.py)
+[Link para main.py](./text_processing.py)
+[Link para main.py](./AVL.py)
+[Link para main.py](./AVL_BST_Performace_Test.py)
