@@ -36,4 +36,8 @@ Neste projeto, foi implementado um sistema de autocompletar palavras usando uma 
 
 4. [**AVL_BST_Performance_Test.py**](./AVL_BST_Performance_Test.py): Este arquivo contém testes de desempenho que comparam a eficiência da Árvore AVL com a Árvore Binária de Busca padrão (BST). É útil para entender como a Árvore AVL melhora a velocidade de pesquisa.
 
+## Link para vídeo descritivo
+
+[Vídeo de Apresentação](https://www.loom.com/share/72f5a3444a8e498ca9c95b250c8d3b9f?sid=7d959c91-55ea-4b71-afc1-6ee62d86c365)
+
 Sinta-se à vontade para explorar esses links para obter uma visão mais aprofundada do projeto e do código-fonte. Se tiver alguma dúvida ou sugestão, não hesite em entrar em contato.
