@@ -1,3 +1,5 @@
+import text_processing
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -49,9 +51,9 @@ class BST:
 
         current_word += current_node.value
 
-        # Se o nó atual é uma palavra completa e começa com o prefixo, adicione-a à lista de palavras
-        if current_node.left_child is None and current_word.startswith(prefix):
-            words.append(current_word)
+        # Verifique se a string em current_node.value começa com o prefixo
+        if current_node.value.startswith(prefix):
+            words.append(current_node.value)
 
         # Continue a busca nas subárvores esquerda e direita
         self._search_words_with_prefix_recursive(current_node.left_child, prefix, current_word, words)
