@@ -34,7 +34,7 @@ Neste projeto, foi implementado um sistema de autocompletar palavras usando uma 
 
 3. [**AVL.py**](./AVL.py): Aqui, você encontrará a implementação da Árvore AVL, que é a estrutura de dados fundamental para armazenar e recuperar palavras de forma eficiente.
 
-4. [**AVL_BST_Performance_Test.py**](./AVL_BST_Performance_Test.py): Este arquivo contém testes de desempenho que comparam a eficiência da Árvore AVL com a Árvore Binária de Busca padrão (BST). É útil para entender como a Árvore AVL melhora a velocidade de pesquisa. [**Veja os gráficos aqui!**](graphics/insercao_altura.png)
+4. [**AVL_BST_Performance_Test.py**](./AVL_BST_Performance_Test.py): Este arquivo contém testes de desempenho que comparam a eficiência da Árvore AVL com a Árvore Binária de Busca padrão (BST). É útil para entender como a Árvore AVL melhora a velocidade de pesquisa. [**Veja os gráficos aqui!**](./graphics/AVLxBST.png)
 
 
 ## Link para vídeo descritivo
