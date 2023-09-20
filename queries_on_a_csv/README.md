@@ -8,6 +8,16 @@ Bem-vindo ao meu repositório pessoal! Aqui, você encontrará os resultados do 
 
 O objetivo deste projeto é desenvolver uma classe Python chamada `Inventory` que permita realizar consultas rápidas em um arquivo CSV contendo informações sobre laptops. A classe implementa diversos métodos para realizar consultas eficazes, como busca por ID de laptop, verificação de preços promocionais e pesquisa de intervalo de preços.
 
+### Principais Características do Código
+
+1. **Leitura e Processamento do CSV:** A classe `Inventory` começa carregando um arquivo CSV com informações sobre laptops. Ela extrai o cabeçalho e as linhas do arquivo, converte os preços em números inteiros e cria estruturas de dados para acesso rápido, como um mapeamento de ID para linha e um conjunto de preços únicos.
+
+2. **Consultas Eficientes:** A classe `Inventory` fornece métodos para consultas eficientes, como `get_laptop_from_id` para buscar laptops por ID, `check_promotion_dollars` para verificar preços de promoção válidos e `range_search` para encontrar laptops dentro de um intervalo de preços especificado.
+
+3. **Ordenação de Dados:** Os laptops são ordenados por preço, facilitando consultas que envolvem a classificação por preço.
+
+4. **Método de Filtragem:** O método `cheapest_filter` permite filtrar laptops pelo tamanho da RAM e capacidade de HD, retornando o laptop mais barato que atende aos critérios especificados.
+
 ### Análise de Complexidade dos Métodos
 
 Aqui, faremos uma análise de complexidade dos principais métodos desenvolvidos na classe `Inventory` para realizar consultas eficientes em um arquivo CSV contendo informações sobre laptops; você também pode assitir ao vídeo explicativo [aqui!](https://www.loom.com/share/74c4c8783a8241b3a8a03823c4f94157)
@@ -93,15 +103,5 @@ Neste método, há um loop que itera sobre cada laptop no vetor `self.rows_by_pr
    - Portanto, a complexidade deste método é O(n), onde "n" é o número total de laptops.
 
 Em resumo, a complexidade geral do método `cheapest_filter` é linear em relação ao número de laptops, que é O(n) na pior hipótese, O(1) na melhor e O(n/2) no caso médio.
-
-### Principais Características do Código
-
-1. **Leitura e Processamento do CSV:** A classe `Inventory` começa carregando um arquivo CSV com informações sobre laptops. Ela extrai o cabeçalho e as linhas do arquivo, converte os preços em números inteiros e cria estruturas de dados para acesso rápido, como um mapeamento de ID para linha e um conjunto de preços únicos.
-
-2. **Consultas Eficientes:** A classe `Inventory` fornece métodos para consultas eficientes, como `get_laptop_from_id` para buscar laptops por ID, `check_promotion_dollars` para verificar preços de promoção válidos e `range_search` para encontrar laptops dentro de um intervalo de preços especificado.
-
-3. **Ordenação de Dados:** Os laptops são ordenados por preço, facilitando consultas que envolvem a classificação por preço.
-
-4. **Método de Filtragem:** O método `cheapest_filter` permite filtrar laptops pelo tamanho da RAM e capacidade de HD, retornando o laptop mais barato que atende aos critérios especificados.
 
 Sinta-se à vontade para explorar o código-fonte e os resultados deste projeto. Se tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato pelo e-mail thiagonasmento20@gmail.com. Estou à disposição para ajudar! 📧
