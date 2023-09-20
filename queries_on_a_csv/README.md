@@ -10,7 +10,7 @@ O objetivo deste projeto é desenvolver uma classe Python chamada `Inventory` qu
 
 ### Análise de Complexidade dos Métodos
 
-Aqui, faremos uma análise de complexidade dos principais métodos desenvolvidos na classe `Inventory` para realizar consultas eficientes em um arquivo CSV contendo informações sobre laptops.
+Aqui, faremos uma análise de complexidade dos principais métodos desenvolvidos na classe `Inventory` para realizar consultas eficientes em um arquivo CSV contendo informações sobre laptops; você também pode assitir ao vídeo explicativo [aqui!](https://www.loom.com/share/74c4c8783a8241b3a8a03823c4f94157)
 
 #### Método `range_search(target_min_price, target_max_price)`
 
@@ -102,8 +102,6 @@ Em resumo, a complexidade geral do método `cheapest_filter` é linear em relaç
 
 3. **Ordenação de Dados:** Os laptops são ordenados por preço, facilitando consultas que envolvem a classificação por preço.
 
-4. **Método de Filtragem:** O método `che
-
-apest_filter` permite filtrar laptops pelo tamanho da RAM e capacidade de HD, retornando o laptop mais barato que atende aos critérios especificados.
+4. **Método de Filtragem:** O método `cheapest_filter` permite filtrar laptops pelo tamanho da RAM e capacidade de HD, retornando o laptop mais barato que atende aos critérios especificados.
 
 Sinta-se à vontade para explorar o código-fonte e os resultados deste projeto. Se tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato pelo e-mail thiagonasmento20@gmail.com. Estou à disposição para ajudar! 📧
