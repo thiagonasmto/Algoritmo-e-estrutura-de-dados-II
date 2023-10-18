@@ -148,8 +148,8 @@ for selected_combination in selected_combinations:
     team_score_example = calculate_team_score(selected_combination)
     team_score_str = f'Team Score {team_score_example:.2f}'
     
-    # Adicionando nó do "Team Score"
-    G.add_node(team_score_str, label=f'Team Score: {team_score_example:.2f}', size=team_score_example)
+    # Adicionando nó do "Team Score" com tamanho e cor fixos
+    G.add_node(team_score_str, label=f'Team Score: {team_score_example:.2f}', size=200, color='blue')
 
     # Adicionando arestas direcionadas das peças para o "Team Score"
     for piece in selected_combination:
@@ -157,22 +157,31 @@ for selected_combination in selected_combinations:
 
         # Adicionando nó da peça, se ainda não existir
         if not G.has_node(piece_name):
-            G.add_node(piece_name, label=piece_name, size=10)  # Ajuste conforme necessário
+            G.add_node(piece_name, label=piece_name)
 
         # Adicionando aresta direcionada da peça para o "Team Score"
         G.add_edge(piece_name, team_score_str)
 
-# Obtendo tamanhos dos nós
-node_sizes = [data['size'] for node, data in G.nodes(data=True)]
+# Calculando o tamanho dos nós das peças com base no número de arestas de saída
+node_sizes = [G.out_degree(piece_name) * 100 for piece_name in G.nodes()]
 
-# Desenhando o grafo direcionado
-pos = nx.spring_layout(G)
+# Mapeando os tamanhos dos nós para um mapa de cores (azul a vermelho)
+norm = plt.Normalize(min(node_sizes), max(node_sizes))
+cmap = plt.get_cmap('coolwarm')
+node_colors = [cmap(norm(size)) for size in node_sizes]
+
+# Atribuindo tamanho e cor fixos para os nós "Team Score"
+node_sizes_fixed = [200 if 'Team Score' in node else size for node, size in zip(G.nodes(), node_sizes)]
+node_colors_fixed = ['blue' if 'Team Score' in node else color for node, color in zip(G.nodes(), node_colors)]
+
+# Desenhando o grafo direcionado com o layout kamada_kawai_layout para espaçamento
+pos = nx.kamada_kawai_layout(G)
 labels = nx.get_edge_attributes(G, 'label')
-nx.draw(G, pos, with_labels=True, labels=nx.get_node_attributes(G, 'label'), font_size=8, node_size=node_sizes, font_color='black', font_weight='bold', node_color='lightblue', edge_color='gray', connectionstyle="arc3,rad=0.1", arrowsize=10)
+nx.draw(G, pos, with_labels=True, labels=nx.get_node_attributes(G, 'label'), font_size=8, node_size=node_sizes_fixed, node_color=node_colors_fixed, font_color='black', font_weight='bold', edge_color='gray', connectionstyle="arc3,rad=0.1", arrowsize=10)
 nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
 
 # Adicionando rótulo de título
-plt.title('Grafo Direcionado de Compatibilidade de Combinações com Tamanhos Proporcionais')
+plt.title('Grafo Direcionado de Compatibilidade de Combinações com Tamanhos Proporcionais e Cores Variadas')
 
 # Exibindo o grafo direcionado
 plt.show()
