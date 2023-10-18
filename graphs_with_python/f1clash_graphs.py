@@ -114,7 +114,7 @@ for combination in configurations:
     team_scores.append(team_score)
 
 # Filtrando team scores entre 680 e 900
-filtered_team_scores = [ts for ts in team_scores if 680 <= ts <= 900]
+filtered_team_scores = [ts for ts in team_scores if 850 <= ts <= 900]
 
 # Criando o histograma
 plt.hist(filtered_team_scores, bins=50, color='blue', edgecolor='black', density=False)  # Com density=True para normalizar
@@ -124,7 +124,7 @@ plt.xlabel('Team Score')
 plt.ylabel('PDF (Probability Distribution Function)')
 plt.title('Histograma de Team Scores (Filtrado de 680 a 900)')
 # Limitando o eixo x entre 0 e 100
-plt.xlim(680, 900)
+plt.xlim(850, 900)
 
 # Exibindo o histograma
 plt.show()
