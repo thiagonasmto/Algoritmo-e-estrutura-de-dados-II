@@ -130,26 +130,6 @@ plt.xlim(680, 900)
 plt.show()
 
 #############################################################
-#                     IMPRESSÃO DA PDF                      #
-#############################################################
-
-# # Calculando a PDF
-# hist, bins = np.histogram(filtered_team_scores, bins=50, density=True)  # density=True para normalizar
-# bin_centers = 0.5 * (bins[1:] + bins[:-1])
-# pdf = hist / np.sum(hist)
-
-# # Plotando a PDF
-# plt.plot(bin_centers, pdf, color='red', linewidth=2)
-
-# # Adicionando rótulos e título
-# plt.xlabel('Team Score')
-# plt.ylabel('PDF (Probability Distribution Function)')
-# plt.title('PDF de Team Scores (Filtrado de 680 a 900)')
-
-# # Exibindo a PDF
-# plt.show()
-
-#############################################################
 #                           GRAFO                           #
 #############################################################
 
