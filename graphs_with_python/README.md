@@ -4,7 +4,7 @@ Este repositório contém um código Python desenvolvido para realizar análises
 
 ## Código
 
-O código Python está presente no arquivo [`analise_combinacoes_f1clash.py`](analise_combinacoes_f1clash.py). Ele utiliza a biblioteca NetworkX para representar grafos e o Matplotlib para gerar histogramas. O código gera todas as combinações possíveis de peças e calcula o "Team Score" para cada configuração.
+O código Python está presente no arquivo [`f1clash_graphs.py`](f1clash_graphs.py). Ele utiliza a biblioteca NetworkX para representar grafos e o Matplotlib para gerar histogramas. O código gera todas as combinações possíveis de peças e calcula o "Team Score" para cada configuração.
 
 ### Geração de Todas as Combinações Possíveis de Peças:
 
@@ -80,19 +80,19 @@ Estes trechos fornecem uma visão geral das principais funcionalidades do códig
 
 ### Histograma Original (Team Score)
 
-![Histograma Original](his-850-900.png)
+![Histograma Original](./assets/his-850-900.png)
 
 ### Histograma Filtrado (Team Score 850-900)
 
-![Histograma Filtrado](his-850-900-filt.png)
+![Histograma Filtrado](./assets/his-850-900-filt.png)
 
 ### Grafo Direcionado de Compatibilidade de Combinações
 
-![Grafo de Compatibilidade de Combinações](grafo-combinacoes-pecas-850-900.png)
+![Grafo de Compatibilidade de Combinações](./assets/grafo-combinacoes-pecas-850-900.png)
 
 ### PDF do Out Degree dos Nós das Peças
 
-![PDF do Out Degree](PDF-team-score-850-900.png)
+![PDF do Out Degree](./assets/PDF-team-score-850-900.png)
 
 **Nota:** Certifique-se de ter as bibliotecas necessárias instaladas antes de executar o código. Você pode instalá-las usando o seguinte comando:
 
