@@ -210,3 +210,38 @@ if out_degrees_pieces:
     plt.show()
 else:
     print("Não há dados para plotar.")
+
+#############################################################
+#                    PESQUISA DE SCORE                      #
+#############################################################
+
+def choose_combinations(configurations, num_choices, score_range=None):
+    # Calcula os team scores para todas as combinações
+    team_scores = [calculate_team_score(combination) for combination in configurations]
+    
+    # Filtra as combinações com base no score_range, se fornecido
+    if score_range:
+        min_score, max_score = score_range
+        filtered_indices = [i for i, score in enumerate(team_scores) if min_score <= score <= max_score]
+    else:
+        filtered_indices = range(len(configurations))
+    
+    # Índices ordenados pelos scores (do maior para o menor)
+    sorted_indices = sorted(filtered_indices, key=lambda i: team_scores[i], reverse=True)
+    
+    # Escolhe as primeiras 'num_choices' combinações
+    selected_combinations = [configurations[i] for i in sorted_indices[:num_choices]]
+    
+    # Retorna as combinações escolhidas e seus scores correspondentes
+    chosen_scores = [calculate_team_score(combination) for combination in selected_combinations]
+    
+    return selected_combinations, chosen_scores
+
+# Escolhe as 5 melhores combinações dentro do intervalo de scores de 850 a 900
+num_choices = 5
+score_range = (400, 700)
+chosen_combinations, chosen_scores = choose_combinations(configurations, num_choices, score_range)
+
+# Imprime as combinações escolhidas e seus scores
+for combination, score in zip(chosen_combinations, chosen_scores):
+    print(f"Combinação: {combination}, Score: {score}")
