@@ -2,7 +2,7 @@ from itertools import product
 import matplotlib.pyplot as plt
 import networkx as nx
 import seaborn as sns
-import numpy as np
+from nxviz import CircosPlot
 
 # Definindo as peças por categoria
 categories = {
@@ -67,6 +67,53 @@ categories = {
         {"name": "Engine Starter", "category": "Engine", "speed": 1, "cornering": 1, "power_unit": 1, "reliability": 1, "avg_pitstop_time": 1.00},
     ],
 }
+
+data_garrafinhas = [
+    {"name": "Tsar", "speed": 0, "cornering": 15, "power_unit": 0, "reliability": 10, "pit_stop": 0, "overtaking": 0, "defending": 10, "race_start": 25, "tyre_management": 0},
+    {"name": "Frost", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 0, "pit_stop": 0, "overtaking": 0, "defending": 0, "race_start": 25, "tyre_management": 10},
+    {"name": "Tulip", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 10, "pit_stop": 20, "overtaking": 0, "defending": 10, "race_start": 0, "tyre_management": 20},
+    {"name": "Dragon", "speed": 0, "cornering": 0, "power_unit": 15, "reliability": 0, "pit_stop": 0, "overtaking": 20, "defending": 0, "race_start": 15, "tyre_management": 0},
+    {"name": "Kawaii", "speed": 0, "cornering": 20, "power_unit": 0, "reliability": 15, "pit_stop": 0, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Pretzel", "speed": 0, "cornering": 0, "power_unit": 15, "reliability": 10, "pit_stop": 0, "overtaking": 0, "defending": 25, "race_start": 0, "tyre_management": 0},
+    {"name": "Vice", "speed": 10, "cornering": 0, "power_unit": 15, "reliability": 0, "pit_stop": 0, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 25},
+    {"name": "Schooner", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 10, "pit_stop": 15, "overtaking": 0, "defending": 10, "race_start": 0, "tyre_management": 25},
+    {"name": "Djinn", "speed": 0, "cornering": 15, "power_unit": 0, "reliability": 15, "pit_stop": 0, "overtaking": 0, "defending": 15, "race_start": 0, "tyre_management": 20},
+    {"name": "Oud", "speed": 0, "cornering": 10, "power_unit": 0, "reliability": 25, "pit_stop": 15, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Eternal Flame", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 0, "pit_stop": 25, "overtaking": 0, "defending": 10, "race_start": 15, "tyre_management": 15},
+    {"name": "Eagle", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 15, "pit_stop": 0, "overtaking": 0, "defending": 20, "race_start": 15, "tyre_management": 15},
+    {"name": "Iron Force", "speed": 0, "cornering": 0, "power_unit": 20, "reliability": 0, "pit_stop": 0, "overtaking": 0, "defending": 10, "race_start": 10, "tyre_management": 20},
+    {"name": "Lumberjack", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 15, "pit_stop": 0, "overtaking": 15, "defending": 10, "race_start": 25, "tyre_management": 0},
+    {"name": "Cranberry", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 20, "pit_stop": 20, "overtaking": 20, "defending": 0, "race_start": 10, "tyre_management": 0},
+    {"name": "Butterfly", "speed": 0, "cornering": 0, "power_unit": 25, "reliability": 5, "pit_stop": 0, "overtaking": 0, "defending": 20, "race_start": 0, "tyre_management": 0},
+    {"name": "Tune-in", "speed": 10, "cornering": 15, "power_unit": 0, "reliability": 25, "pit_stop": 0, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Self-Control", "speed": 0, "cornering": 0, "power_unit": 5, "reliability": 0, "pit_stop": 0, "overtaking": 0, "defending": 5, "race_start": 5, "tyre_management": 5},
+    {"name": "Warrior", "speed": 10, "cornering": 0, "power_unit": 0, "reliability": 5, "pit_stop": 0, "overtaking": 5, "defending": 5, "race_start": 0, "tyre_management": 0},
+    {"name": "Ballast", "speed": 0, "cornering": 10, "power_unit": 0, "reliability": 10, "pit_stop": 0, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Instinct", "speed": 0, "cornering": 0, "power_unit": 15, "reliability": 0, "pit_stop": 0, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 5},
+    {"name": "Downforce", "speed": 0, "cornering": 5, "power_unit": 0, "reliability": 15, "pit_stop": 0, "overtaking": 15, "defending": 15, "race_start": 0, "tyre_management": 0},
+    {"name": "Hex", "speed": 15, "cornering": 0, "power_unit": 0, "reliability": 5, "pit_stop": 20, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Eggception", "speed": 0, "cornering": 0, "power_unit": 10, "reliability": 15, "pit_stop": 25, "overtaking": 0, "defending": 15, "race_start": 0, "tyre_management": 0},
+    {"name": "Rooster", "speed": 0, "cornering": 0, "power_unit": 10, "reliability": 0, "pit_stop": 20, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Cuppa", "speed": 0, "cornering": 20, "power_unit": 0, "reliability": 0, "pit_stop": 10, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Street Sharl", "speed": 15, "cornering": 0, "power_unit": 0, "reliability": 0, "pit_stop": 10, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Herald", "speed": 0, "cornering": 15, "power_unit": 0, "reliability": 0, "pit_stop": 10, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Prince", "speed": 0, "cornering": 20, "power_unit": 0, "reliability": 10, "pit_stop": 0, "overtaking": 10, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Unstoppable", "speed": 15, "cornering": 0, "power_unit": 10, "reliability": 0, "pit_stop": 25, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Dead Fast", "speed": 25, "cornering": 0, "power_unit": 20, "reliability": 0, "pit_stop": 0, "overtaking": 5, "defending": 0, "race_start": 5, "tyre_management": 0},
+    {"name": "Gadiator", "speed": 0, "cornering": 0, "power_unit": 10, "reliability": 25, "pit_stop": 0, "overtaking": 25, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Taurus", "speed": 20, "cornering": 0, "power_unit": 25, "reliability": 0, "pit_stop": 5, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Merilion", "speed": 15, "cornering": 25, "power_unit": 0, "reliability": 10, "pit_stop": 0, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Samba", "speed": 5, "cornering": 0, "power_unit": 25, "reliability": 0, "pit_stop": 20, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Caveira", "speed": 25, "cornering": 0, "power_unit": 10, "reliability": 0, "pit_stop": 15, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Fogos", "speed": 20, "cornering": 0, "power_unit": 0, "reliability": 0, "pit_stop": 15, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Movember", "speed": 0, "cornering": 25, "power_unit": 0, "reliability": 15, "pit_stop": 0, "overtaking": 15, "defending": 10, "race_start": 0, "tyre_management": 0},
+    {"name": "Palmeira", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 20, "pit_stop": 0, "overtaking": 20, "defending": 20, "race_start": 0, "tyre_management": 0},
+    {"name": "Nazar", "speed": 0, "cornering": 0, "power_unit": 0, "reliability": 0, "pit_stop": 0, "overtaking": 0, "defending": 15, "race_start": 15, "tyre_management": 15},
+    {"name": "Aderência", "speed": 0, "cornering": 25, "power_unit": 0, "reliability": 0, "pit_stop": 0, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 15},
+    {"name": "Arco-íris", "speed": 20, "cornering": 0, "power_unit": 0, "reliability": 25, "pit_stop": 0, "overtaking": 25, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Eclipse", "speed": 25, "cornering": 0, "power_unit": 0, "reliability": 10, "pit_stop": 15, "overtaking": 0, "defending": 0, "race_start": 0, "tyre_management": 0},
+    {"name": "Rena", "speed": 0, "cornering": 10, "power_unit": 0, "reliability": 20, "pit_stop": 20, "overtaking": 0, "defending": 20, "race_start": 0, "tyre_management": 0}
+]
 
 # Gerando todas as combinações possíveis de peças
 configurations = list(product(*(categories[category] for category in categories)))
@@ -245,3 +292,97 @@ chosen_combinations, chosen_scores = choose_combinations(configurations, num_cho
 # Imprime as combinações escolhidas e seus scores
 for combination, score in zip(chosen_combinations, chosen_scores):
     print(f"Combinação: {combination}, Score: {score}")
+
+#############################################################
+#                     GRAFO BIPARTIDO                       #
+#############################################################
+
+G = nx.Graph()
+
+# Separe os nós em dois grupos: 'Garrafinhas' e 'Propriedades'
+garrafinhas = [garrafinha["name"] for garrafinha in data_garrafinhas]
+propriedades = [
+    "speed", "cornering", "power_unit", "reliability", "pit_stop", "overtaking", "defending", "race_start", "tyre_management"
+]
+
+G.add_nodes_from(garrafinhas, bipartite=0)
+G.add_nodes_from(propriedades, bipartite=1)
+
+# Adicione arestas do grupo de propriedades para o grupo de garrafinhas
+for garrafinha in garrafinhas:
+    for propriedade in propriedades:
+        peso = data_garrafinhas[garrafinhas.index(garrafinha)][propriedade]
+        if peso > 0:
+            G.add_edge(garrafinha, propriedade, weight=peso)  # Adicione o peso como atributo
+
+# Calcular o Out Degree de cada nó no grupo de propriedades
+out_degree = {propriedade: 0 for propriedade in propriedades}
+for propriedade in propriedades:
+    for garrafinha in garrafinhas:
+        if G.has_edge(garrafinha, propriedade):
+            peso = G[garrafinha][propriedade]["weight"]
+            out_degree[propriedade] += peso
+
+# Calcular o tamanho dos vértices das Propriedades proporcional ao Out Degree
+propriedade_sizes = [out_degree[propriedade] for propriedade in propriedades]
+
+# Desenhar o grafo
+pos = nx.bipartite_layout(G, garrafinhas)
+nx.draw_networkx_nodes(G, pos, nodelist=garrafinhas, node_color='b', node_size=500)
+nx.draw_networkx_nodes(G, pos, nodelist=propriedades, node_color='r', node_size=propriedade_sizes)
+labels = {propriedade: f'{propriedade}: OutDegree = {out_degree[propriedade]}' for propriedade in propriedades}
+nx.draw_networkx_labels(G, pos, labels={node: node for node in garrafinhas}, font_size=8)  # Adicione isso para os nós das garrafinhas
+nx.draw_networkx_labels(G, pos, labels=labels, font_size=8)
+edges = G.edges()
+edge_labels = {(u, v): G[u][v]['weight'] for u, v in edges}  # Rótulos das setas
+nx.draw_networkx_edges(G, pos, edgelist=edges, width=1.0, edge_color='grey')
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, label_pos=0.5, font_size=8)
+plt.axis('off')
+plt.show()
+
+#############################################################
+#                      GRAFO CIRCULAR                       #
+#############################################################
+
+G = nx.Graph()
+
+# Separe os nós em dois grupos: 'Garrafinhas' e 'Propriedades'
+garrafinhas = [garrafinha["name"] for garrafinha in data_garrafinhas]
+propriedades = [
+    "speed", "cornering", "power_unit", "reliability", "pit_stop", "overtaking", "defending", "race_start", "tyre_management"
+]
+
+G.add_nodes_from(garrafinhas, bipartite=0)
+G.add_nodes_from(propriedades, bipartite=1)
+
+# Adicione arestas do grupo de propriedades para o grupo de garrafinhas
+for garrafinha in garrafinhas:
+    for propriedade in propriedades:
+        peso = data_garrafinhas[garrafinhas.index(garrafinha)][propriedade]
+        if peso > 0:
+            G.add_edge(garrafinha, propriedade, weight=peso)  # Adicione o peso como atributo
+
+# Calcular o Out Degree de cada nó no grupo de propriedades
+out_degree = {propriedade: 0 for propriedade in propriedades}
+for propriedade in propriedades:
+    for garrafinha in garrafinhas:
+        if G.has_edge(garrafinha, propriedade):
+            peso = G[garrafinha][propriedade]["weight"]
+            out_degree[propriedade] += peso
+
+# Calcular o tamanho dos vértices das Propriedades proporcional ao Out Degree
+propriedade_sizes = [out_degree[propriedade] for propriedade in propriedades]
+
+# Desenhar o grafo em um layout circular
+pos = nx.circular_layout(G)
+nx.draw_networkx_nodes(G, pos, nodelist=garrafinhas, node_color='b', node_size=500)
+nx.draw_networkx_nodes(G, pos, nodelist=propriedades, node_color='r', node_size=propriedade_sizes)
+labels = {propriedade: f'{propriedade}: OutDegree = {out_degree[propriedade]}' for propriedade in propriedades}
+nx.draw_networkx_labels(G, pos, labels={node: node for node in garrafinhas}, font_size=8)  # Adicione isso para os nós das garrafinhas
+nx.draw_networkx_labels(G, pos, labels=labels, font_size=8)
+edges = G.edges()
+edge_labels = {(u, v): G[u][v]['weight'] for u, v in edges}  # Rótulos das setas
+nx.draw_networkx_edges(G, pos, edgelist=edges, width=1.0, edge_color='grey')
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, label_pos=0.5, font_size=8)
+plt.axis('off')
+plt.show()
