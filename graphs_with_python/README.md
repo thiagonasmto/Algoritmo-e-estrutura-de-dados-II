@@ -28,7 +28,7 @@ def calculate_team_score(configuration):
 
 ```python
 # Criando o histograma original
-plt.hist(team_scores, bins=30, color='green', edgecolor='black', density=False)
+plt.hist(team_scores, bins=30, color 'green', edgecolor='black', density=False)
 ```
 
 ### Histograma Filtrado (Team Score 850-900):
@@ -48,7 +48,7 @@ plt.hist(filtered_team_scores, bins=30, color='green', edgecolor='black', densit
 G = nx.DiGraph()
 
 # Adicionando nós e arestas ao grafo
-for selected_combination in selected_combinations:
+for selected_combination in selected combinations:
     # ...
 ```
 
@@ -74,6 +74,28 @@ plt.xlim(0, 60)  # Limitando o eixo x entre 0 e 60
 plt.show()
 ```
 
+### Grafo Bipartido de Combinações
+
+```python
+# Criando o grafo bipartido
+B = nx.Graph()
+
+# Adicionando nós e arestas ao grafo
+for combination in combinations:
+    # ...
+```
+
+### Grafo Circular de Combinações
+
+```python
+# Criando o grafo circular
+C = nx.Graph()
+
+# Adicionando nós e arestas ao grafo
+for combination in combinations:
+    # ...
+```
+
 Estes trechos fornecem uma visão geral das principais funcionalidades do código. Certifique-se de explorar o repositório para obter o código completo e executá-lo para análises mais detalhadas.
 
 ## Resultados Gráficos
@@ -93,6 +115,14 @@ Estes trechos fornecem uma visão geral das principais funcionalidades do códig
 ### PDF do Out Degree dos Nós das Peças
 
 ![PDF do Out Degree](./assets/PDF-team-score-850-900.png)
+
+### Grafo Bipartido de Combinações
+
+![Grafo Bipartido](./assets/grafo-bipartido-garrafinhas.png)
+
+### Grafo Circular de Combinações
+
+![Grafo Circular](./assets/grafo-circular-garrafinhas.png)
 
 **Nota:** Certifique-se de ter as bibliotecas necessárias instaladas antes de executar o código. Você pode instalá-las usando o seguinte comando:
 
