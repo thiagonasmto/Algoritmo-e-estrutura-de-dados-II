@@ -2,7 +2,6 @@ from itertools import product
 import matplotlib.pyplot as plt
 import networkx as nx
 import seaborn as sns
-from nxviz import CircosPlot
 
 # Definindo as peças por categoria
 categories = {
