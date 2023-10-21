@@ -68,4 +68,4 @@ Este gráfico representa um grafo bipartido que conecta dois tipos diferentes de
 pip install networkx matplotlib seaborn numpy
 ```
 
-Divirta-se explorando e analisando as combinações no jogo F1Clash!
+Divirta-se explorando e analisando as combinações no jogo F1Clash! Contrinuições são bem-vindas.
