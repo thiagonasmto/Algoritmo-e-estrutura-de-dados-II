@@ -1,5 +1,3 @@
-Aqui está o seu README atualizado com explicações adicionais para os gráficos:
-
 # Projeto de Algoritmos e Estrutura de Dados II: Análise de Combinações no Jogo F1Clash
 
 Este repositório contém um código Python desenvolvido para realizar análises de combinações de peças no jogo F1Clash, utilizando grafos e histogramas. O objetivo é encontrar configurações ideais para maximizar o "Team Score" com base em diferentes categorias de peças disponíveis no jogo.
