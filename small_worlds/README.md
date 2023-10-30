@@ -1,24 +1,10 @@
-# Análise de Rede Social
+# Small Worlds
 
-Este código realiza uma análise de uma rede social representada por um arquivo de arestas. Ele calcula várias métricas e produz visualizações relacionadas às propriedades do grafo.
-
-## Executando o Código
-
-Para executar o código:
-
-1. Certifique-se de ter o Python instalado.
-2. Instale as bibliotecas necessárias executando `pip install networkx matplotlib seaborn`.
-3. Coloque o arquivo de arestas (`facebook_combined.txt`) no diretório `./small_worlds/data/`.
-
-Execute o script `analyze_social_network.py`:
-
-```bash
-python analyze_social_network.py
-```
+Este repositório faz parte das atividades propostas na disciplina de algoritmos e estruturas de dados II do curso de engnharia da computação (UFRN), consiste na análise e desenvolvimento de gráficos com foco em relações de assortatividade.
 
 ## Resultados
 
-O código fornecerá as seguintes informações sobre a rede social:
+O código fornecerá as seguintes informações:
 
 Claro, aqui está a tabela com o cabeçalho centralizado:
 
@@ -30,12 +16,7 @@ Claro, aqui está a tabela com o cabeçalho centralizado:
 | Enron Email Network           |      36692         |      183831        |     -0.1108     |         1065           |             33696               |     0.49698255959950266      |
 | Pennsylvania Road Network     |      1088092       |      1541898       |     0.1227      |         206            |            1087562              |     0.04647676048519474      |
 
-
-Agora o cabeçalho da tabela está centralizado. Se precisar de mais alguma modificação, por favor, me avise.
-
 ## Gráfico de Grau vs. Grau Médio dos Vizinhos
-
-Aqui estão as imagens organizadas em uma tabela:
 
 | Amazon Product Co-Purchasing Network  | Enron Email Network                   | Gnutella Peer-to-Peer Network            | Pennsylvania Road Network                | Social Circles Facebook              |
 |--------------------------------------|-------------------------------------|-----------------------------------------|-----------------------------------------|-----------------------------------|
@@ -43,8 +24,6 @@ Aqui estão as imagens organizadas em uma tabela:
 | Amazon Product Co-Purchasing Network is a network with 262,111 vertices and 899,792 edges. It has a small negative assortativity (-0.0025) and a high clustering coefficient (0.4198). | Enron Email Network consists of 36,692 vertices and 183,831 edges. It has a high negative assortativity (-0.1108) and a high clustering coefficient (0.4970). | Gnutella Peer-to-Peer Network has 10,876 vertices and 39,994 edges. It has a small negative assortativity (-0.0132) and a low clustering coefficient (0.0062). | Pennsylvania Road Network is a large network with 1,088,092 vertices and 1,541,898 edges. It has positive assortativity (0.1227) and a moderate clustering coefficient (0.0465). | Social Circles Facebook is a network with 4,039 vertices and 88,234 edges. It has positive assortativity (0.0636) and a high clustering coefficient (0.6055). |
 
 ## Análise dos Gráficos
-
-Peço desculpas pela confusão. Você está correto, a assortatividade da rede Amazon Product Co-Purchasing é negativa, e não positiva. Obrigado por apontar o erro. Aqui está a correção:
 
 # Amazon Product Co-Purchasing Network:
 
@@ -112,5 +91,3 @@ O gráfico pode indicar a presença de subgrupos na rede, onde usuários com nú
 A ampla variação no average neighbor degree sugere que os usuários do Facebook têm diferentes comportamentos de conexão. Alguns podem se concentrar em estabelecer conexões com muitos outros usuários, enquanto outros podem preferir um círculo de amigos mais restrito.
 
 ---
-
-Este README inclui a análise do gráfico de grau vs. grau médio dos vizinhos, destacando as descobertas e insights com base nas observações do gráfico. Certifique-se de adicionar a imagem `degree_avg_neighbour_degree.png` à pasta `assets` para que a imagem seja exibida corretamente no seu README.
