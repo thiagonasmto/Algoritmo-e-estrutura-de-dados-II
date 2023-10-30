@@ -8,7 +8,7 @@ This dataset consists of 'circles' (or 'friends lists') from Facebook.
 Facebook data was collected from survey participants using Facebook app. 
 The dataset includes node features (profiles), circles, and ego networks.
 '''
-# G = nx.read_edgelist('./small_worlds/data/facebook_combined.txt', nodetype=int)
+G = nx.read_edgelist('./small_worlds/data/facebook_combined.txt', nodetype=int)
 
 '''
 Leitura do arquivo de arestas - Gnutella peer-to-peer network, August 4 2002
@@ -39,7 +39,7 @@ Leitura do arquivo de arestas - Pennsylvania road network
 This is a road network of Pennsylvania. 
 Intersections and endpoints are represented by nodes, and the roads connecting these intersections or endpoints are represented by undirected edges.
 '''
-G = nx.read_edgelist('./small_worlds/data/roadNet-PA.txt', nodetype=int)
+#G = nx.read_edgelist('./small_worlds/data/roadNet-PA.txt', nodetype=int)
 
 # Obtenha o número de vértices (nós) no grafo
 num_vertices = G.number_of_nodes()
@@ -94,4 +94,4 @@ ax.set_ylabel("Average neighbor degree")
 plt.savefig("degree_assortativity.png", format="png", dpi=400, bbox_inches="tight", transparent=True)
 
 # Mostre o gráfico (se desejado)
-plt.show()
+#plt.show()
