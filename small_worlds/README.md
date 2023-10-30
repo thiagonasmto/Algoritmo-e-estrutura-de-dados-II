@@ -31,7 +31,7 @@ O código fornecerá as seguintes informações sobre a rede social:
 
 ## Gráfico de Grau vs. Grau Médio dos Vizinhos
 
-![Grau vs. Grau Médio dos Vizinhos](small_worlds/assets/degree_avg_neighbour_degree.png)
+![Grau vs. Grau Médio dos Vizinhos](assets/degree_avg_neigbhour_degree.png)
 
 ### Análise do Gráfico
 
