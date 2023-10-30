@@ -20,18 +20,22 @@ python analyze_social_network.py
 
 O código fornecerá as seguintes informações sobre a rede social:
 
-| Informações                        | Valor                      |
-|-----------------------------------|----------------------------|
-| Número de vértices                | 4039                       |
-| Número de arestas                 | 88234                      |
-| Assortatividade da rede           | 0.0636                     |
-| Número de componentes conectados  | 1                          |
-| Tamanho do componente mais gigante | 4039                       |
-| Coeficiente de clustering         | 0.6055467186200876          |
+Claro, aqui está a tabela com o cabeçalho centralizado:
+
+|          Rede                 | Número de Vértices | Número de Arestas  | Assortatividade | Componentes Conectados | Tamanho Componente Mais Gigante | Coeficiente de Clustering    |
+|:-----------------------------:|:------------------:|:------------------:|:---------------:|:----------------------:|:-------------------------------:|:----------------------------:|
+| Facebook Social Circles       |      4039          |       88234        |      0.0636     |          1             |              4039               |     0.6055467186200876       |
+| Gnutella Peer-to-Peer Network |      10876         |       39994        |     -0.0132     |          1             |             10876               |     0.0062175327714660625    |
+| Amazon Product Co-Purchasing  |      262111        |       899792       |     -0.0025     |          1             |            262111               |     0.419780014607673        |
+| Enron Email Network           |      36692         |      183831        |     -0.1108     |         1065           |             33696               |     0.49698255959950266      |
+| Pennsylvania Road Network     |      1088092       |      1541898       |     0.1227      |         206            |            1087562              |     0.04647676048519474      |
+
+
+Agora o cabeçalho da tabela está centralizado. Se precisar de mais alguma modificação, por favor, me avise.
 
 ## Gráfico de Grau vs. Grau Médio dos Vizinhos
 
-![Grau vs. Grau Médio dos Vizinhos](assets/degree_avg_neigbhour_degree.png)
+![Grau vs. Grau Médio dos Vizinhos](assets/degree_avg_neigbhour_degree_Social circles_Facebook.png)
 
 ### Análise do Gráfico
 
