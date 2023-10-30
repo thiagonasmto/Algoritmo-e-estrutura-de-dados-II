@@ -2,8 +2,44 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Leitura do arquivo de arestas
-G = nx.read_edgelist('./small_worlds/data/facebook_combined.txt', nodetype=int)
+'''
+Leitura do arquivo de arestas - conexões entre pessoas no Facebook
+This dataset consists of 'circles' (or 'friends lists') from Facebook. 
+Facebook data was collected from survey participants using Facebook app. 
+The dataset includes node features (profiles), circles, and ego networks.
+'''
+# G = nx.read_edgelist('./small_worlds/data/facebook_combined.txt', nodetype=int)
+
+'''
+Leitura do arquivo de arestas - conexões de computadores
+A sequence of snapshots of the Gnutella peer-to-peer file sharing network from August 2002. 
+There are total of 9 snapshots of Gnutella network collected in August 2002. 
+Nodes represent hosts in the Gnutella network topology and edges represent connections between the Gnutella hosts.
+'''
+#G = nx.read_edgelist('./small_worlds/data/p2p-Gnutella04.txt', nodetype=int)
+
+'''
+Leitura do arquivo de arestas - conexões de produtos da Amazon
+Network was collected by crawling Amazon website. It is based on Customers Who Bought This Item Also Bought feature of the Amazon website. 
+If a product i is frequently co-purchased with product j, the graph contains a directed edge from i to j.
+'''
+#G = nx.read_edgelist('./small_worlds/data/Amazon0302.txt', nodetype=int)
+
+'''
+Leitura do arquivo de arestas - Enron email network
+Enron email communication network covers all the email communication within a dataset of around half million emails. 
+This data was originally made public, and posted to the web, by the Federal Energy Regulatory Commission during its investigation. 
+Nodes of the network are email addresses and if an address i sent at least one email to address j, the graph contains an undirected edge from i to j. 
+Note that non-Enron email addresses act as sinks and sources in the network as we only observe their communication with the Enron email addresses.
+'''
+#G = nx.read_edgelist('./small_worlds/data/Email-Enron.txt', nodetype=int)
+
+'''
+Leitura do arquivo de arestas - Pennsylvania road network
+This is a road network of Pennsylvania. 
+Intersections and endpoints are represented by nodes, and the roads connecting these intersections or endpoints are represented by undirected edges.
+'''
+G = nx.read_edgelist('./small_worlds/data/roadNet-PA.txt', nodetype=int)
 
 # Obtenha o número de vértices (nós) no grafo
 num_vertices = G.number_of_nodes()
