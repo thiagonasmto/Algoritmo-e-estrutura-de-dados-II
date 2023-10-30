@@ -26,73 +26,41 @@ def calculate_team_score(configuration):
 
 ### Histograma Original (Team Score):
 
-```python
-# Criando o histograma original
-plt.hist(team_scores, bins=30, color='green', edgecolor='black', density=False)
-```
-
-### Histograma Filtrado (Team Score 850-900):
-
-```python
-# Filtrando team scores entre 680 e 900
-filtered_team_scores = [ts for ts in team_scores if 850 <= ts <= 900]
-
-# Criando o histograma
-plt.hist(filtered_team_scores, bins=30, color='green', edgecolor='black', density=False)
-```
-
-### Criação do Grafo Direcionado:
-
-```python
-# Criação do grafo direcionado (DiGraph)
-G = nx.DiGraph()
-
-# Adicionando nós e arestas ao grafo
-for selected_combination in selected_combinations:
-    # ...
-```
-
-### Impressão dos Valores do Out Degree:
-
-```python
-# Imprimindo os valores do Out Degree
-for node in G.nodes:
-    out_degree = G.out_degree(node)
-    print(f"Node: {node}, Out Degree: {out_degree}")
-```
-
-### Gráfico de PDF do Out Degree:
-
-```python
-# Criando o gráfico de PDF usando Seaborn
-plt.figure(figsize=(8, 6))
-sns.kdeplot(out_degrees_pieces, fill=True, color='skyblue')
-plt.title('PDF do Out Degree dos Nós das Peças')
-plt.xlabel('Out Degree')
-plt.ylabel('PDF (Probability Density Function)')
-plt.xlim(0, 60)  # Limitando o eixo x entre 0 e 60
-plt.show()
-```
-
-Estes trechos fornecem uma visão geral das principais funcionalidades do código. Certifique-se de explorar o repositório para obter o código completo e executá-lo para análises mais detalhadas.
-
-## Resultados Gráficos
-
-### Histograma Original (Team Score)
+Este histograma representa a distribuição dos "Team Scores" calculados para todas as combinações de peças possíveis. Ele é útil para entender a variabilidade dos resultados e identificar configurações com pontuações excepcionalmente altas ou baixas.
 
 ![Histograma Original](./assets/his-850-900.png)
 
-### Histograma Filtrado (Team Score 850-900)
+### Histograma Filtrado (Team Score 850-900):
+
+Este histograma é uma versão filtrada do anterior e exibe apenas os "Team Scores" que estão na faixa de 850 a 900. Isso ajuda a identificar configurações que atendem a um critério específico de pontuação desejada.
 
 ![Histograma Filtrado](./assets/his-850-900-filt.png)
 
-### Grafo Direcionado de Compatibilidade de Combinações
+### Criação do Grafo Direcionado:
+
+Este gráfico direcionado representa a compatibilidade entre as diferentes combinações de peças. Os nós representam as combinações, e as setas indicam como uma combinação pode levar a outra. É útil para visualizar relações de dependência entre as configurações.
 
 ![Grafo de Compatibilidade de Combinações](./assets/grafo-combinacoes-pecas-850-900.png)
 
-### PDF do Out Degree dos Nós das Peças
+### Impressão dos Valores do Out Degree:
+
+Esta seção imprime os valores do grau de saída (Out Degree) para cada nó no grafo direcionado. O grau de saída representa quantas outras combinações podem ser alcançadas a partir de uma combinação específica.
+
+### Gráfico de PDF do Out Degree:
+
+Este gráfico de Função de Densidade de Probabilidade (PDF) mostra a distribuição dos graus de saída (Out Degrees) das combinações no grafo direcionado. Isso ajuda a entender a conectividade das combinações e pode ser útil para identificar configurações que são mais influentes no sistema.
 
 ![PDF do Out Degree](./assets/PDF-team-score-850-900.png)
+
+### Grafo Bipartido de Combinações:
+
+Este gráfico representa um grafo bipartido que conecta dois tipos diferentes de nós: as combinações de peças e as categorias de peças. As arestas indicam quais categorias de peças estão presentes em cada combinação. Isso é útil para identificar padrões de combinações que compartilham categorias semelhantes.
+
+![Grafo Bipartido](./assets/grafo-bipartido-garrafinhas.png)
+
+### Grafo Circular de Combinações:
+
+![Grafo Circular](./assets/grafo-circular-garrafinhas.png)
 
 **Nota:** Certifique-se de ter as bibliotecas necessárias instaladas antes de executar o código. Você pode instalá-las usando o seguinte comando:
 
@@ -100,4 +68,4 @@ Estes trechos fornecem uma visão geral das principais funcionalidades do códig
 pip install networkx matplotlib seaborn numpy
 ```
 
-Divirta-se explorando e analisando as combinações no jogo F1Clash!
+Divirta-se explorando e analisando as combinações no jogo F1Clash! Contribuições são bem-vindas.
