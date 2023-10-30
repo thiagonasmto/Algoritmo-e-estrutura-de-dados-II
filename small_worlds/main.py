@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 '''
-Leitura do arquivo de arestas - conexões entre pessoas no Facebook
+Leitura do arquivo de arestas - Social circles: Facebook
 This dataset consists of 'circles' (or 'friends lists') from Facebook. 
 Facebook data was collected from survey participants using Facebook app. 
 The dataset includes node features (profiles), circles, and ego networks.
@@ -11,7 +11,7 @@ The dataset includes node features (profiles), circles, and ego networks.
 # G = nx.read_edgelist('./small_worlds/data/facebook_combined.txt', nodetype=int)
 
 '''
-Leitura do arquivo de arestas - conexões de computadores
+Leitura do arquivo de arestas - Gnutella peer-to-peer network, August 4 2002
 A sequence of snapshots of the Gnutella peer-to-peer file sharing network from August 2002. 
 There are total of 9 snapshots of Gnutella network collected in August 2002. 
 Nodes represent hosts in the Gnutella network topology and edges represent connections between the Gnutella hosts.
@@ -19,7 +19,7 @@ Nodes represent hosts in the Gnutella network topology and edges represent conne
 #G = nx.read_edgelist('./small_worlds/data/p2p-Gnutella04.txt', nodetype=int)
 
 '''
-Leitura do arquivo de arestas - conexões de produtos da Amazon
+Leitura do arquivo de arestas - Amazon product co-purchasing network, March 02 2003
 Network was collected by crawling Amazon website. It is based on Customers Who Bought This Item Also Bought feature of the Amazon website. 
 If a product i is frequently co-purchased with product j, the graph contains a directed edge from i to j.
 '''
